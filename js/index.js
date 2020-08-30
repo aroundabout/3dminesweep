@@ -783,7 +783,6 @@ function InitializeComponent(){
     InitializeMaterials();
     InitializeCubes();
     InitializeGame();
-//    check();
 }
 
 
