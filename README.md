@@ -13,7 +13,7 @@ github：<https://github.com/aroundabout/3dminesweep>
    2. three.js
 2. 运行方式
    1. 项目部署在远程服务器，可以通过上文的地址直接访问
-   2. 下载项目直接在本地运行index.js
+   2. 下载项目直接在本地运行index.html
 3. 项目使用说明
    1. 本项目采用three.js构造3d扫雷，其中每个位置周围的26个位置可能存在雷，点开所有非雷的格子即胜利
    2. 界面说明：
