@@ -572,8 +572,10 @@ function InitializeMaterials(){
     var material=new THREE.MeshBasicMaterial();
     //添加表示数字的材质,0-26对应0-26个雷
     for(let i=0;i<27;i++){
+
         var mat=material.clone();
         mat.map=new THREE.TextureLoader().load('textures/'+i+'.png');
+        
         materials.push(mat);
     }
     //添加功能性贴图
