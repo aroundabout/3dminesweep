@@ -324,22 +324,26 @@ function reStart(){
 
 function reArrange(i){
     reStart();
-    isFirstClick=false;
+    isFirstClick=true;
     var index=i;//obj就是要操作的对象
     var obj=cubes.children[i];
     if(index<total){
         if(!isGameOver && isVisited[index]==0 && obj.material!=materials[29]){
             isVisited[index]=1;
             visited++;
-            if(mineNumber[index]==0){
-                //如果选中了空白的，就点亮周围全部的
-                showAround(index);
-            }
-            if(mineNumber[index]==30){
+            if(mineNumber[index]!=0){
                 if(isFirstClick){
                     reArrange(index);
                     return;
                 }
+               
+            }
+            else{
+                 //如果选中了空白的，就点亮周围全部的
+                 showAround(index);
+            }
+            if(mineNumber[index]==30){
+
                 loseGame();
             }
             else{
@@ -352,7 +356,7 @@ function reArrange(i){
             obj.material=materials[mineNumber[index]];
         }
     }
-   
+    isFirstClick=false;
 
 }
 
@@ -386,15 +390,19 @@ function onMouseClick(event){
             if(!isGameOver && isVisited[index]==0 && obj.material!=materials[29]){
                 isVisited[index]=1;
                 visited++;
-                if(mineNumber[index]==0){
-                    //如果选中了空白的，就点亮周围全部的
-                    showAround(index);
-                }
-                if(mineNumber[index]==30){
+                if(mineNumber[index]!=0){
                     if(isFirstClick){
                         reArrange(index);
                         return;
                     }
+                  
+                }
+                else{
+                      //如果选中了空白的，就点亮周围全部的
+                      showAround(index);
+                }
+                if(mineNumber[index]==30){
+                   
                     loseGame();
                 }
                 else{
